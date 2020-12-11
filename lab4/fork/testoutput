@@ -1,0 +1,9 @@
+cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 5; ee469_fixterminal
+Stack=0x1fffc8, pc starting at 0x13490
+Got 3 arguments.
+Available memory: 0x23f38 -> 0x200000.
+Argument count is 3.
+Argument 0 is -u.
+Argument 1 is makeprocs.dlx.obj.
+Argument 2 is 5.
+Got a control-C: exiting!

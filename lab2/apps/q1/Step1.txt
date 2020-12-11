@@ -1,0 +1,15 @@
+How many semaphores are available in DLXOS? 
+ - 32
+
+How many locks are availble in DLXOS?
+ - 64
+
+How is a semaphore created in DLXOS?
+ - Call SemCreate and pass it the resource count. It picks a semaphore in the semaphore array that's not in use and passes a handle to that sempahore back to use in future wait and signal calls.  
+
+Explain how sem_signal and sem_wait work.
+ - sem_wait first disables the interupts. Then it checks to see if the count is less than or equal to 0. If it is, the function enqueues the current process to the semaphores waiting queue and puts the current process to sleep. At the end, it decrements the count and restores the interrupts. 
+ - sem_signal first disables the interrupts and restores them at the end like sem_wait to ensure the function call is an atomic operation. The function then increments the count and if the count is greater than 0, it dequeues a process off the semaphore's waiting queue and wakes it up. 
+
+What is a handle and how is it used to access semaphores in DLXOS?
+ - A handle is the integer index of the semaphore being used within the semaphore array. And the semaphore is used by indexing into the semaphore array using the handle passed to sem_signal or sem_wait.

@@ -1,0 +1,13 @@
+You can run this program to test your priority queues.  This program in no way comes
+close to testing everything.  You are free to modify this however you wish.
+
+One simple test that you can run with this program is:
+
+$ make run > log
+$ diff log expected_output
+
+The expected_output file is what was printed by the solution code.  Your code should
+switch processes in and out exactly the same way, resulting in the same sequence of 
+print messages.  The only difference in the two files should be the two lines printing
+the *real* execution time, since that will vary from one run to another.
+

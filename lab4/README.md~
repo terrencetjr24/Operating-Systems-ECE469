@@ -1,0 +1,35 @@
+# How to build solution
+ - to run question 1 (one-level implementation), run the following commands: 
+```
+$ cd lab4/one-level/os
+$ make clean
+$ make
+$ cd ../apps/example
+$ make clean
+$ make
+$ make run
+
+ - to run the question 3 (fork implementation), directly after running Q1:
+$ cd ../../..
+
+$ cd fork/os
+$ make clean
+$ make
+$ cd ../apps/single_fork_call
+$ make clean
+$ make
+$ make run
+
+ - to run question 5 (heap implementation), directly after running Q3:
+$ cd ../../..
+
+$ 
+```
+
+# Peculiarities about our Solution
+ - When running the example code inside of prio_test, our processes display their print statements in the proper order except for two statements.
+ - The two statements are A22 and C5 that are swapped
+ - The reason that the two statements are swapped is likely becasue the C process spends too much time in the same queue as the A process (allowing it to finish C5 before A22), which was likely casued by a rounding difference from our estcpu calculations
+
+# External Sources
+ - none
